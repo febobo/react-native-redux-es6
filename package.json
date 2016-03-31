@@ -1,0 +1,17 @@
+{
+  "name": "ysApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "i": "^0.3.4",
+    "react": "^0.14.7",
+    "react-native": "^0.22.2",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1",
+    "rnpm": "^1.5.3"
+  }
+}
