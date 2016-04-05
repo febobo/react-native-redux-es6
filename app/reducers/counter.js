@@ -1,21 +1,34 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-  count: 0
+  resultNum: 0,
+  operator : '',
+  operand : '',
+  calMethod : ''
 };
 
 export default function counter(state = initialState, action = {}) {
+
+      console.log(action)
   switch (action.type) {
-      case types.INCREMENT:
+      case types.ADD:
+        console.log(action.val)
         return {
                 ...state,
-                count: state.count + 1
+                resultNum : state.resultNum ? state.resultNum += action.val.toString() : action.val.toString()
               };
-      case types.DECREMENT:
+      case types.ADDMETHOD:
+        return Object.assign(state ,
+           {calMethod : action.calMethod ,
+             operator : state.resultNum,
+           });
+      case types.RESULT:
         return {
                 ...state,
-                count: state.count - 1
+                resultNum: state.resultNum - 1
               };
+      case types.CLEAR:
+        return Object.assgin(state , {})
       default:
         return state;
     }

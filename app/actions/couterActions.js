@@ -1,13 +1,27 @@
 import * as types from './actionTypes';
 
-export function increment() {
+export function add(val) {
   return {
-      type: types.INCREMENT
+      type: types.ADD,
+      val : val
     };
 }
 
-export function decrement() {
+export function addMethod(cal) {
   return {
-      type: types.DECREMENT
+      type: types.ADDMETHOD,
+      calMethod : cal
+    };
+}
+
+export function result() {
+  return {
+      type: types.RESULT
+    };
+}
+
+export function clear() {
+  return {
+      type: types.CLEAR
     };
 }
