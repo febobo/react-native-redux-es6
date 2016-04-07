@@ -1,6 +1,5 @@
-# react-native-redux-es6
 
-## React Native ES6 Redux 仿ios计算器
+# React Native ES6 Redux 仿ios计算器
 
 ### 先上效果图  
 
