@@ -1,5 +1,6 @@
 # react-native-redux-es6
-react-native-redux-es6 快速写一个计算器
+
+## React Native ES6 Redux 仿ios计算器
 
 ### 先上效果图  
 
@@ -23,4 +24,5 @@ $ npm start
 使用xcode 打开react-native-redux-es6/ios/demo.xcodeproj  
 or ```$ open demo.xcodeproj```
 
-
+### PS
+只完成基本算法，仅供学习参考使用
