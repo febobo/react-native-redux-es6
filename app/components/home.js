@@ -127,6 +127,7 @@ let styles = StyleSheet.create({
     padding : 10
   },
   resultText : {
+    textAlign : 'right',
     fontSize : 60,
     color : '#fff'
   },
