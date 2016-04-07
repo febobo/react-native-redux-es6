@@ -17,11 +17,11 @@ export default class Home extends Component {
    if(start !== undefined) num = num.slice(start,end);
    return {
      num : num,
-     operator : ['/' , '*' , '-' ,'+' ,'=']
+     operator : ['/' , '*' , '-' ,'+']
    }
  }
  render (){
-   const {add , resultNum , addMethod , clear} = this.props.actions;
+   const {add , resultNum , addMethod , clear , result} = this.props.actions;
    return (
      <View style={[styles.leftTop,{flex:1,flexDirection:'column'}]}>
        <View style={[styles.result]}>
@@ -100,19 +100,18 @@ export default class Home extends Component {
                 </View>
              </TouchableOpacity>
             )}
+            <TouchableOpacity onPress={() => result()}  style={[styles.operatorItem]} >
+               <View>
+                  <Text style={[styles.operatorItemText]}>=</Text>
+               </View>
+            </TouchableOpacity>
           </View>
        </View>
      </View>
    )
  }
 }
-// {this.initNum().operator.map( (v,k) =>
-//   <TouchableHighlight key={k}>
-//     <View sytle={{flex: 1, backgroundColor:"#aabbaa"}}>
-//       <Text >{v}</Text>
-//     </View>
-//   </TouchableHighlight>
-// )}
+
 
 let globalOperatorColor = '#EF7B25';
 let globalNumColor = '#F0F0F0';

@@ -15,7 +15,7 @@ export default function counter(state = initialState, action = {}) {
         console.log(action.val)
         return {
                 ...state,
-                resultNum : state.resultNum ? state.resultNum += action.val.toString() : action.val.toString()
+                resultNum : action.val
               };
       case types.ADDMETHOD:
         return Object.assign(state ,
@@ -23,12 +23,19 @@ export default function counter(state = initialState, action = {}) {
              operator : state.resultNum,
            });
       case types.RESULT:
-        return {
-                ...state,
-                resultNum: state.resultNum - 1
-              };
+        return Object.assign({},{
+          resultNum: action.resultNum,
+          operator : '',
+          operand : '',
+          calMethod : ''
+        })
       case types.CLEAR:
-        return Object.assgin(state , {})
+        return Object.assign({},{
+          resultNum: 0,
+          operator : '',
+          operand : '',
+          calMethod : ''
+        })
       default:
         return state;
     }
