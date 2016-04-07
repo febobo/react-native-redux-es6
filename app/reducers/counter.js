@@ -18,9 +18,11 @@ export default function counter(state = initialState, action = {}) {
                 resultNum : action.val
               };
       case types.ADDMETHOD:
-        return Object.assign(state ,
+        return Object.assign({} ,
            {calMethod : action.calMethod ,
-             operator : state.resultNum,
+             operator : action.operator,
+             operand : '',
+             resultNum: action.resultNum
            });
       case types.RESULT:
         return Object.assign({},{

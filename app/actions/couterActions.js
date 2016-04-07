@@ -17,10 +17,32 @@ export function add(val) {
 }
 
 export function addMethod(cal) {
-  return {
-      type: types.ADDMETHOD,
-      calMethod : cal
-    };
+  return (dispatch , getState) => {
+    const {counter} = getState();
+    if(counter.calMethod){
+      switch (counter.calMethod) {
+        case '+':
+          counter.resultNum = parseFloat(counter.operator) + parseFloat(counter.operand);
+          break;
+        case '-':
+          counter.resultNum = parseFloat(counter.operator) - parseFloat(counter.operand);
+          break;
+        case '*':
+          counter.resultNum = parseFloat(counter.operator) * parseFloat(counter.operand);
+          break;
+        case '/':
+          counter.resultNum = parseFloat(counter.operator) / parseFloat(counter.operand);
+          break;
+        default:
+      }
+    }
+    return dispatch({
+        type: types.ADDMETHOD,
+        calMethod : cal,
+        resultNum : counter.resultNum,
+        operator : counter.resultNum
+      });
+  }
 }
 
 export function result() {
@@ -40,11 +62,12 @@ export function result() {
         counter.resultNum = parseFloat(counter.operator) / parseFloat(counter.operand);
         break;
       default:
-
     }
     return dispatch({
         type: types.RESULT,
-        resultNum : counter.resultNum
+        resultNum : counter.resultNum,
+        operand : '',
+        operator : counter.resultNum,
       });
   }
 }
