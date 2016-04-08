@@ -13,7 +13,7 @@ export default class Home extends Component {
  }
 
  initNum (start , end){
-   let num = [1,2,3,4,5,6,7,8,9];
+   let num = [7,8,9,4,5,6,1,2,3];
    if(start !== undefined) num = num.slice(start,end);
    return {
      num : num,

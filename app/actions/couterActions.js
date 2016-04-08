@@ -19,7 +19,7 @@ export function add(val) {
 export function addMethod(cal) {
   return (dispatch , getState) => {
     const {counter} = getState();
-    if(counter.calMethod){
+    if(counter.calMethod && counter.operand){
       switch (counter.calMethod) {
         case '+':
           counter.resultNum = parseFloat(counter.operator) + parseFloat(counter.operand);
@@ -48,6 +48,7 @@ export function addMethod(cal) {
 export function result() {
   return (dispatch , getState) => {
     const {counter} = getState();
+    if(!counter.operand) return;
     switch (counter.calMethod) {
       case '+':
         counter.resultNum = parseFloat(counter.operator) + parseFloat(counter.operand);

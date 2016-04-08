@@ -1,9 +1,15 @@
 
 # React Native ES6 Redux 仿ios计算器
 
+### 借助react-web 实现react-native能在web端使用
+
 ### 先上效果图  
 
-![效果图](http://g.recordit.co/0iaUPata6z.gif)
+#### ios版  
+![效果图](http://g.recordit.co/0iaUPata6z.gif)  
+
+#### web版   
+![效果图](http://g.recordit.co/ICPy5GbAul.gif)
 
 ### Requirements
 
